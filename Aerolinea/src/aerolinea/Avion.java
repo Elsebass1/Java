@@ -1,70 +1,61 @@
+//
 package aerolinea;
-// matricula = String
-// CapacidadC = int
-// porcentaje consumo x vuelo = float
-// nivel de desgaste = int
+
 public class Avion {
-    private String matricula;
-    private int capacidadC;
-    private int porcentajeConsumoXvuelo;
-    private int nivelDeDesgaste;
-//constructor
-    public Avion(String matricula, int capacidadC, float porcentajeConsumoXvuelo, int nivelDeDesgaste) {
-        this.SetMatricula = matricula;
-        this.SetCapacidadC = capacidadC;
-        this.SetPorcentajeConsumoXvuelo = porcentajeConsumoXvuelo;
-        this.SetNivelDeDesgaste = nivelDeDesgaste;
-    }
-//getters
-    public String getMatricula() {
-        return matricula;
+    private String matriculaAv;
+    private int capacidadCombAv;
+    private int porcentajeConsXvuelo;
+    private int nivDeDesgaste;
+    //constructor
+
+    public Avion(String matriculaAv, int capacidadCombAv, int porcentajeConsXvuelo, int nivDeDesgaste) {
+        this.matriculaAv = matriculaAv;
+        this.capacidadCombAv = capacidadCombAv;
+        this.porcentajeConsXvuelo = porcentajeConsXvuelo;
+        this.nivDeDesgaste = nivDeDesgaste;
     }
 
-    public int getCapacidadC() {
-        return capacidadC;
-    }
-
-    public float getPorcentajeConsumoXvuelo() {
-        return porcentajeConsumoXvuelo;
-    }
-
-    public int getNivelDeDesgaste() {
-        return nivelDeDesgaste;
-    }
-// setters 
-    public void setMatricula(String matricula) {
-        if (matricula != null && matricula.length() > 6){
-            System.out.println("Matricula ");
+    public void setMatriculaAv(String matriculaAv) {
+        if (matriculaAv != null && matriculaAv.length()>= 6){
+            this.matriculaAv = matriculaAv;
         }else{
-            System.out.println("Matricula invalida");
-        }
-        this.matricula = matricula;
-    }
-
-    public void setCapacidadC(int capacidadC) {
-        if(capacidadC > 0 && capacidadC <= 5000){
-            this.capacidadC = capacidadC;
+            this.matriculaAv = "invalida";
         }
     }
 
-    public void setPorcentajeConsumoXvuelo(int porcentajeConsumoXvuelo) {
-        if(porcentajeConsumoXvuelo >= 5 && porcentajeConsumoXvuelo <= 30)
-        this.porcentajeConsumoXvuelo = porcentajeConsumoXvuelo;
+    public void setCapacidadCombAv(int capacidadCombAv) {
+        if (capacidadCombAv > 0 && capacidadCombAv >= 5000);
+            this.capacidadCombAv = capacidadCombAv;
     }
 
-    public void setNivelDeDesgaste(int nivelDeDesgaste) {
-        if (nivelDeDesgaste >=0 && nivelDeDesgaste <100){
-        this.nivelDeDesgaste = nivelDeDesgaste;
-        }
+    public void setPorcentajeConsXvuelo(int porcentajeConsXvuelo) {
+        if(porcentajeConsXvuelo >=10 && porcentajeConsXvuelo <= 35);
+            this.porcentajeConsXvuelo = porcentajeConsXvuelo;
     }
-//metodo customer
-    public int combustibleXvuelo(){
-        return this.capacidadC * (this.porcentajeConsumoXvuelo/100);
-        
-    }
-    
-}
-    
 
+    public void setNivDeDesgaste(int nivDeDesgaste) {
+        if(nivDeDesgaste >=0 && nivDeDesgaste <= 100);
+            this.nivDeDesgaste = nivDeDesgaste;
+    }
+
+    public String getMatriculaAv() {
+        return matriculaAv;
+    }
+
+    public int getCapacidadCombAv() {
+        return capacidadCombAv;
+    }
+
+    public int getPorcentajeConsXvuelo() {
+        return porcentajeConsXvuelo;
+    }
+
+    public int getNivDeDesgaste() {
+        return nivDeDesgaste;
+    }
+    //customer
+    public int calculoConsXvuelo(){
+        return porcentajeConsXvuelo = capacidadCombAv * (porcentajeConsXvuelo / 100);
+    }
     
 }
